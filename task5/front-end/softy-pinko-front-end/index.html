@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Copied from task3 version; only the AJAX URL differs to use proxy path -->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
+    <title>Softy Pinko</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-softy-pinko.css">
+  </head>
+  <body>
+    <div class="welcome-area" id="welcome">
+      <div class="header-text">
+        <div class="container">
+          <div class="row">
+            <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
+              <h1 id="dynamic-content"></h1>
+              <h1>We provide the best <strong>strategy</strong><br>to grow up your <strong>business</strong></h1>
+              <a href="#features" class="main-button-slider">Discover More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/jquery-2.1.0.min.js"></script>
+    <script>
+      $(function() {
+        $.ajax({
+          type: "GET",
+          url: "/api/hello",
+          success: function (data) {
+            $('#dynamic-content').text(data);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
+
+
